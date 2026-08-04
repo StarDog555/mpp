@@ -14,7 +14,7 @@
 
 ## Quick Start
 
-**Open mpp.c**. Under EDIT THIS, set the value of variables the to your preference
+**Open mpp.c**. Under EDIT THIS, set the value of the variables to your preference
 
 **After compiling** mpp.c with any Compiler you like
 
