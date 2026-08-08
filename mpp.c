@@ -29,7 +29,7 @@ char *COMPILER = "clang"; // clang, gcc, cl, and cc
 char *OUTNAME = "example"; // main ect..
 char *MAIN = "example/test.c"; // ---.c ---.c ect..
 char *LINKS = ""; // -lInlcude ect.
-char *FLAGS = ""; // "-Wall - Wextra" ect.
+char *FLAGS = ""; // "-Wall -Wextra" ect.
 /*-----------------------
 * -----------------------
 * -----------------------
