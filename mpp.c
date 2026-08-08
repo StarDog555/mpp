@@ -25,7 +25,6 @@
 #include <string.h>
 
 /*  EDIT THIS */
-// Note: It will Always generate a executable 
 char *COMPILER = "clang"; // clang, gcc, cl, and cc
 char *OUTNAME = "example"; // main ect..
 char *MAIN = "example/test.c"; // ---.c ---.c ect..
