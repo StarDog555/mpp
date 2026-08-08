@@ -146,6 +146,11 @@ void Run_CommandS(char *compiler)
 
 int main(int argc, char **argv) 
 {
+    // Just HMMM HMM so good and 3 lines only just perfect
+    if (argv[1]) {
+        COMPILER = argv[1];
+    }
+    
     Run_CommandS(COMPILER);
     return 0;
 }

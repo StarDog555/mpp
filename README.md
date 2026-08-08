@@ -20,6 +20,12 @@ After Compile mpp.c with any Compiler you like
 
 And **Run** the mpp executable Thats it.
 
+> **Note** Theres a optional arg for the executable for letting users pick which compiler it have or want to use 
+
+```bash
+./mpp <COMPILER>
+```
+
 ---
 
 ## Author
