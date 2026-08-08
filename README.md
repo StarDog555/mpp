@@ -6,19 +6,19 @@
 > **No Build Build System**
 
 
+- **Made** For C
 - **Supports** gcc, clang, cc, and cl
-- **For** C
 - **Works** on Windows and Linux
 
 ---
 
 ## Quick Start
 
-Open mpp.c Under EDIT THIS Config How you like
+**Open mpp.c**. Under EDIT THIS, set the value of the variables to your preference
 
-After Compile mpp.c with any Compiler you like
+**After compiling** mpp.c with any Compiler you like
 
-And **Run** the mpp executable Thats it.
+**Run** the mpp executable... And that's it.
 
 > **Note** Theres a optional arg for the executable for letting users pick which compiler it have or want to use 
 
