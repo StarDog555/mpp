@@ -25,6 +25,7 @@
 ```bash
 ./mpp <COMPILER>
 ```
+possible args are gcc, cc, cl, and clang
 
 ---
 
