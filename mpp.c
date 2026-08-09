@@ -114,7 +114,6 @@ void Run_CommandS(char *compiler)
         case COMPILER_CL: {
             Check_For_NULL();
 
-    #ifdef _WIN32
             const char *links = LINKS ? LINKS : "";
             const char *flags = FLAGS ? FLAGS : "";
 
@@ -125,9 +124,6 @@ void Run_CommandS(char *compiler)
 
             int result = system(command);
             (void)result;
-    #else
-            fprintf(stderr, "[-] ERROR: Microsoft CL is only available on Windows.\n");
-    #endif
             break;
         }
 
