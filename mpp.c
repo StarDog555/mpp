@@ -44,7 +44,7 @@ typedef enum {
 } CompilerID;
 
 
-void Check_For_NULL() 
+void Check_For_NULL()
 {
     if (MAIN == NULL) {
         fprintf(stderr ,"[-] ERROR: MAIN is Null");
@@ -52,7 +52,7 @@ void Check_For_NULL()
     }
 }
 
-CompilerID Get_CompilerID(char *c) 
+CompilerID Get_CompilerID(char *c)
 {
     if (strcmp(c, "clang") == 0) return COMPILER_CLANG;
     else if (strcmp(c, "gcc") == 0) return COMPILER_GCC;
@@ -61,73 +61,68 @@ CompilerID Get_CompilerID(char *c)
     return COMPILER_UNKNOWN;
 }
 
-void Run_CommandS(char *compiler) 
+void Run_CommandS(char *compiler)
 {
     switch (Get_CompilerID(compiler)) {
         case COMPILER_CLANG: {
             Check_For_NULL();
-    
+
             const char *links = LINKS ? LINKS : "";
             const char *flags = FLAGS ? FLAGS : "";
-    
+
             char command[1028];
             snprintf(command, sizeof(command),
                      "clang %s %s %s -o %s",
                      MAIN, links, flags, OUTNAME);
-    
+
             int result = system(command);
             (void)result;
             break;
         }
-    
+
         case COMPILER_GCC: {
             Check_For_NULL();
-    
+
             const char *links = LINKS ? LINKS : "";
             const char *flags = FLAGS ? FLAGS : "";
-    
+
             char command[1028];
             snprintf(command, sizeof(command),
                      "gcc %s %s %s -o %s",
                      MAIN, links, flags, OUTNAME);
-    
+
             int result = system(command);
             (void)result;
             break;
         }
-    
+
         case COMPILER_CC: {
             Check_For_NULL();
-    
-    #ifdef _WIN32
-            fprintf(stderr, "[-] ERROR: 'cc' is not available on Windows.\n");
-    #else
+
             const char *links = LINKS ? LINKS : "";
             const char *flags = FLAGS ? FLAGS : "";
-    
+
             char command[1028];
             snprintf(command, sizeof(command),
                      "cc %s %s %s -o %s",
                      MAIN, links, flags, OUTNAME);
-    
             int result = system(command);
             (void)result;
-    #endif
             break;
         }
-    
+
         case COMPILER_CL: {
             Check_For_NULL();
-    
+
     #ifdef _WIN32
             const char *links = LINKS ? LINKS : "";
             const char *flags = FLAGS ? FLAGS : "";
-    
+
             char command[1028];
             snprintf(command, sizeof(command),
                      "cl %s %s %s /Fe:%s.exe",
                      MAIN, links, flags, OUTNAME);
-    
+
             int result = system(command);
             (void)result;
     #else
@@ -135,7 +130,7 @@ void Run_CommandS(char *compiler)
     #endif
             break;
         }
-    
+
         case COMPILER_UNKNOWN:
         default:
             fprintf(stderr, "[-] ERROR: Unknown compiler.\n");
@@ -143,13 +138,13 @@ void Run_CommandS(char *compiler)
     }
 }
 
-int main(int argc, char **argv) 
+int main(int argc, char **argv)
 {
     // Just HMMM HMM so good and 3 lines only just perfect
     if (argv[1]) {
         COMPILER = argv[1];
     }
-    
+
     Run_CommandS(COMPILER);
     return 0;
 }
